@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="modle.Item" table="ITEMS">
+<id name="Serial" type="int" column="SERIAL" >
+<generator class="increment"/>
+</id>
+<property name="ItemName">
+ <column name="NAME"/>
+</property>
+<property name="Description">
+ <column name="DESCRIPTION"/>
+</property>
+ <many-to-one name="User" class="modle.User"
+            column="ID" unique="false" not-null="true"
+            cascade="all" />
+ </class>
+</hibernate-mapping>
